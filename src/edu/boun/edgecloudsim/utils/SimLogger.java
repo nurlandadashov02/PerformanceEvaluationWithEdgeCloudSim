@@ -622,20 +622,26 @@ public class SimLogger {
 				}
 				else {
 					printLine(SimSettings.getInstance().getTaskName(i));
-					printLine("# of tasks (Edge/Cloud): "
+					printLine("# of tasks (Mobile/Edge/Cloud): "
 							+ (failedTask[i] + completedTask[i]) + "("
-							+ (failedTaskOnEdge[i] + completedTaskOnEdge[i]) + "/" 
-							+ (failedTaskOnCloud[i]+ completedTaskOnCloud[i]) + ")" );
+							+ (failedTaskOnMobile[i]+ completedTaskOnMobile[i]) + "/"
+							+ (failedTaskOnEdge[i] + completedTaskOnEdge[i]) + "/"
+							+ (failedTaskOnCloud[i]+ completedTaskOnCloud[i])
+							+ ")" );
 					
-					printLine("# of failed tasks (Edge/Cloud): "
+					printLine("# of failed tasks (Mobile/Edge/Cloud): "
 							+ failedTask[i] + "("
+							+ failedTaskOnMobile[i] + "/"
 							+ failedTaskOnEdge[i] + "/"
-							+ failedTaskOnCloud[i] + ")");
+							+ failedTaskOnCloud[i]
+							+ ")");
 					
-					printLine("# of completed tasks (Edge/Cloud): "
+					printLine("# of completed tasks (Mobile/Edge/Cloud): "
 							+ completedTask[i] + "("
+							+ completedTaskOnMobile[i] + "/"
 							+ completedTaskOnEdge[i] + "/"
-							+ completedTaskOnCloud[i] + ")");
+							+ completedTaskOnCloud[i]
+							+ ")");
 					
 					printLine("---------------------------------------");
 				}
@@ -663,35 +669,40 @@ public class SimLogger {
 		}
 
 		// printout important results
-		printLine("# of tasks (Edge/Cloud/Mobile): "
+		printLine("# of tasks (Mobile/Edge/Cloud): "
 				+ (failedTask[numOfAppTypes] + completedTask[numOfAppTypes]) + "("
-				+ (failedTaskOnEdge[numOfAppTypes] + completedTaskOnEdge[numOfAppTypes]) + "/" 
-				+ (failedTaskOnCloud[numOfAppTypes]+ completedTaskOnCloud[numOfAppTypes]) + "/" 
-				+ (failedTaskOnMobile[numOfAppTypes]+ completedTaskOnMobile[numOfAppTypes]) + ")");
+				+ (failedTaskOnMobile[numOfAppTypes] + completedTaskOnMobile[numOfAppTypes]) + "/"
+				+ (failedTaskOnEdge[numOfAppTypes] + completedTaskOnEdge[numOfAppTypes]) + "/"
+				+ (failedTaskOnCloud[numOfAppTypes]+ completedTaskOnCloud[numOfAppTypes])
+				+ ")");
 		
 		printLine("# of failed tasks (Edge/Cloud/Mobile): "
 				+ failedTask[numOfAppTypes] + "("
+				+ failedTaskOnMobile[numOfAppTypes] + "/"
 				+ failedTaskOnEdge[numOfAppTypes] + "/"
-				+ failedTaskOnCloud[numOfAppTypes] + "/"
-				+ failedTaskOnMobile[numOfAppTypes] + ")");
+				+ failedTaskOnCloud[numOfAppTypes]
+				+ ")");
 		
-		printLine("# of completed tasks (Edge/Cloud/Mobile): "
+		printLine("# of completed tasks (Mobile/Edge/Cloud): "
 				+ completedTask[numOfAppTypes] + "("
+				+ completedTaskOnMobile[numOfAppTypes] + "/"
 				+ completedTaskOnEdge[numOfAppTypes] + "/"
-				+ completedTaskOnCloud[numOfAppTypes] + "/"
-				+ completedTaskOnMobile[numOfAppTypes] + ")");
+				+ completedTaskOnCloud[numOfAppTypes]
+				+ ")");
 		
-		printLine("# of uncompleted tasks (Edge/Cloud/Mobile): "
+		printLine("# of uncompleted tasks (Mobile/Edge/Cloud): "
 				+ uncompletedTask[numOfAppTypes] + "("
+				+ uncompletedTaskOnMobile[numOfAppTypes] + "/"
 				+ uncompletedTaskOnEdge[numOfAppTypes] + "/"
-				+ uncompletedTaskOnCloud[numOfAppTypes] + "/"
-				+ uncompletedTaskOnMobile[numOfAppTypes] + ")");
+				+ uncompletedTaskOnCloud[numOfAppTypes]
+				+ ")");
 
-		printLine("# of failed tasks due to vm capacity (Edge/Cloud/Mobile): "
+		printLine("# of failed tasks due to vm capacity (Mobile/Edge/Cloud): "
 				+ failedTaskDueToVmCapacity[numOfAppTypes] + "("
+				+ failedTaskDueToVmCapacityOnMobile[numOfAppTypes] + "/"
 				+ failedTaskDueToVmCapacityOnEdge[numOfAppTypes] + "/"
-				+ failedTaskDueToVmCapacityOnCloud[numOfAppTypes] + "/"
-				+ failedTaskDueToVmCapacityOnMobile[numOfAppTypes] + ")");
+				+ failedTaskDueToVmCapacityOnCloud[numOfAppTypes]
+				+ ")");
 		
 		printLine("# of failed tasks due to Mobility/WLAN Range/Network(WLAN/MAN/WAN/GSM): "
 				+ failedTaskDuetoMobility[numOfAppTypes]
